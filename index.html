@@ -17,6 +17,7 @@
                     <li><a href="#screen-2">2</a></li>
                     <li><a href="#screen-3">3</a></li>
                     <li><a href="#screen-4">4</a></li>
+                    <li><a href="#screen-5">5</a></li>
                 </ul>
             </nav>
         </header>
@@ -62,6 +63,48 @@
                         </div>
                     </article>
                 </section>
+                <section id="screen-5">
+                    <article>
+                        <div class="content">
+                            <select id="select-image">
+                                <option value="images/angel.png">Angel</option>
+                                <option value="images/babe-2.png">Babe 2</option>
+                                <option value="images/babe-logo.png">Babe Logo</option>
+                                <option value="images/babe.png">Babe</option>
+                                <option value="images/big-madge.png">Big Madge</option>
+                                <option value="images/bigbrain.png">Big Brain</option>
+                                <option value="images/boo.png">Boooooooo</option>
+                                <option value="images/cola-transparent.png">Cola</option>
+                                <option value="images/cool-cat.png">Cool</option>
+                                <option value="images/dead.png">Dead</option>
+                                <option value="images/devil.png">Devil</option>
+                                <option value="images/dude.png">Dude</option>
+                                <option value="images/fingey.png">Fingey</option>
+                                <option value="images/gum.png">Gum</option>
+                                <option value="images/levels.png">Levels</option>
+                                <option value="images/logo.png">Logo</option>
+                                <option value="images/look-at-dis.png">Look at dis</option>
+                                <option value="images/madge.png">Madge</option>
+                                <option value="images/point-transparent.png">Point (transparent)</option>
+                                <option value="images/point.png">Point</option>
+                                <option value="images/radioactive.png">Radioactive</option>
+                                <option value="images/robot.png">Robot</option>
+                                <option value="images/salty.png">Salty</option>
+                                <option value="images/sick.png">Sick</option>
+                                <option value="images/sing.png">Sing</option>
+                                <option value="images/suit-transparent.png">Suit (transparent)</option>
+                                <option value="images/thumbs-down.png">Thumbs Down</option>
+                                <option value="images/thumbs-up-green.png">Thumbs Up (green)</option>
+                                <option value="images/thumbs-up-transparent.png">Thumbs Up (transparent)</option>
+                                <option value="images/toilet.png">Toilet</option>
+                                <option value="images/whistle.png">Whistle</option>
+                            </select>
+                            <div class="image-wrapper">
+                                <img id="image" />
+                            </div>
+                        </div>
+                    </article>
+                </section>
             </div>
         </div>
     </body>
@@ -94,6 +137,17 @@
             }
             document.querySelector(".custom-input").classList.add("hidden");
             document.querySelector(".custom-text").classList.remove("hidden");
+        });
+        
+        document.querySelector("#select-image").addEventListener("change", () => {
+            document.querySelector("#select-image").classList.add("hidden");
+            document.querySelector("#image").src = document.querySelector("#select-image").value;
+            document.querySelector("#image").classList.remove("hidden");
+        });
+
+        document.querySelector("#image").addEventListener("click", () => {
+            document.querySelector("#select-image").classList.remove("hidden");
+            document.querySelector("#image").classList.add("hidden");
         });
     </script>
 </html>
