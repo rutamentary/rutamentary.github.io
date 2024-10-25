@@ -38,7 +38,7 @@
                 <section id="screen-2">
                     <article>
                         <div class="content">
-                            <p class="large-font custom-text">
+                            <p class="large-font custom-text second-text">
                             </p>
                             <input class="custom-input" placeholder="Lorem ipsum..."></input>
                         </div>
@@ -47,7 +47,7 @@
                 <section id="screen-3">
                     <article>
                         <div class="content">
-                            <p class="large-font fading-text">
+                            <p class="large-font fading-text third-text">
                                 SLEEPING ...
                             </p>
                         </div>
@@ -84,10 +84,14 @@
         document.querySelector(".custom-text").addEventListener("click", () =>{
             document.querySelector(".custom-text").classList.add("hidden");
             document.querySelector(".custom-input").classList.remove("hidden");
+            document.querySelector(".custom-text").classList.remove("alert");
         });
 
         document.querySelector(".custom-input").addEventListener("change", (event) =>{
             document.querySelector(".custom-text").innerHTML = event.target.value;
+            if(event.target.value.toLowerCase().includes('alert')) {
+                document.querySelector(".custom-text").classList.add("alert");
+            }
             document.querySelector(".custom-input").classList.add("hidden");
             document.querySelector(".custom-text").classList.remove("hidden");
         });
